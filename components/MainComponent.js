@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import Home from './HomeComponent';
 import Directory from './DirectoryComponent';
 import CampsiteInfo from './CampsiteInfoComponent';
@@ -12,7 +12,7 @@ const DirectoryNavigator = createStackNavigator(
     {
         Directory: { screen: Directory },
         CampsiteInfo: { screen: CampsiteInfo }
-    }, 
+    },
     {
         initialRouteName: 'Directory',
         defaultNavigationOptions: {
@@ -30,7 +30,7 @@ const DirectoryNavigator = createStackNavigator(
 const HomeNavigator = createStackNavigator(
     {
         Home: { screen: Home }
-    }, 
+    },
     {
         defaultNavigationOptions: {
             headerStyle: {
@@ -46,8 +46,8 @@ const HomeNavigator = createStackNavigator(
 
 const MainNavigator = createDrawerNavigator(
     {
-        Home: {screen: HomeNavigator},
-        Directory: {screen: DirectoryNavigator}
+        Home: { screen: HomeNavigator },
+        Directory: { screen: DirectoryNavigator }
     },
     {
         drawerBackgroundColor: '#CEC8FF'
@@ -63,7 +63,7 @@ class Main extends Component {
                 style={{
                     flex: 1,
                     paddingTop: Platform.OS === 'ios' ? 0 : Constants.statusBarHeight
-            }}>
+                }}>
                 <AppNavigator />
             </View>
         );
