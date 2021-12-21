@@ -14,9 +14,9 @@ import SafeAreaView from 'react-native-safe-area-view';
 
 const DirectoryNavigator = createStackNavigator(
     {
-        Directory: { 
+        Directory: {
             screen: Directory,
-            navigationOptions: ({navigation}) => ({
+            navigationOptions: ({ navigation }) => ({
                 headerLeft: <Icon
                     name='list'
                     type='font-awesome'
@@ -46,7 +46,7 @@ const HomeNavigator = createStackNavigator(
         Home: { screen: Home }
     },
     {
-        defaultNavigationOptions: ({navigation}) => ({
+        defaultNavigationOptions: ({ navigation }) => ({
             headerStyle: {
                 backgroundColor: '#5637DD'
             },
@@ -55,21 +55,21 @@ const HomeNavigator = createStackNavigator(
                 color: '#fff'
             },
             headerLeft: <Icon
-                    name='home'
-                    type='font-awesome'
-                    iconStyle={styles.stackIcon}
-                    onPress={() => navigation.toggleDrawer()}
-                />
+                name='home'
+                type='font-awesome'
+                iconStyle={styles.stackIcon}
+                onPress={() => navigation.toggleDrawer()}
+            />
         })
     }
 );
 
 const AboutNavigator = createStackNavigator(
     {
-        About: {screen: About}
+        About: { screen: About }
     },
     {
-        defaultNavigationOptions: ({navigation}) => ({
+        defaultNavigationOptions: ({ navigation }) => ({
             headerStyle: {
                 backgroundColor: '#5637DD'
             },
@@ -78,21 +78,21 @@ const AboutNavigator = createStackNavigator(
                 color: '#fff'
             },
             headerLeft: <Icon
-                    name='info-circle'
-                    type='font-awesome'
-                    iconStyle={styles.stackIcon}
-                    onPress={() => navigation.toggleDrawer()}
-                />
+                name='info-circle'
+                type='font-awesome'
+                iconStyle={styles.stackIcon}
+                onPress={() => navigation.toggleDrawer()}
+            />
         })
     }
 );
 
 const ContactNavigator = createStackNavigator(
     {
-        Contact: {screen: Contact}
+        Contact: { screen: Contact }
     },
     {
-        defaultNavigationOptions: ({navigation}) => ({
+        defaultNavigationOptions: ({ navigation }) => ({
             headerStyle: {
                 backgroundColor: '#5637DD'
             },
@@ -101,11 +101,11 @@ const ContactNavigator = createStackNavigator(
                 color: '#fff'
             },
             headerLeft: <Icon
-                    name='address-card'
-                    type='font-awesome'
-                    iconStyle={styles.stackIcon}
-                    onPress={() => navigation.toggleDrawer()}
-                />
+                name='address-card'
+                type='font-awesome'
+                iconStyle={styles.stackIcon}
+                onPress={() => navigation.toggleDrawer()}
+            />
         })
     }
 );
@@ -113,17 +113,17 @@ const ContactNavigator = createStackNavigator(
 const CustomDrawerContentComponent = props => (
     <ScrollView>
         <SafeAreaView
-            style={ styles.container}
-            forceInset={{top: 'always', horizontal: 'never'}}
+            style={styles.container}
+            forceInset={{ top: 'always', horizontal: 'never' }}
         >
             <View style={styles.drawerHeader}>
-                <View style={{flex: 1}}>
+                <View style={{ flex: 1 }}>
                     <Image
                         source={require('./images/logo.png')}
                         style={styles.drawerImage}
                     />
                 </View>
-                <View style={{flex: 2}}>
+                <View style={{ flex: 2 }}>
                     <Text style={styles.drawerHeaderText}>Nucamp</Text>
                 </View>
             </View>
@@ -134,10 +134,10 @@ const CustomDrawerContentComponent = props => (
 
 const MainNavigator = createDrawerNavigator(
     {
-        Home: { 
+        Home: {
             screen: HomeNavigator,
             navigationOptions: {
-                drawerIcon: ({tintColor}) => (
+                drawerIcon: ({ tintColor }) => (
                     <Icon
                         name='home'
                         type='font-awesome'
@@ -147,10 +147,10 @@ const MainNavigator = createDrawerNavigator(
                 )
             }
         },
-        Directory: { 
-            screen: DirectoryNavigator, 
+        Directory: {
+            screen: DirectoryNavigator,
             navigationOptions: {
-                drawerIcon: ({tintColor}) => (
+                drawerIcon: ({ tintColor }) => (
                     <Icon
                         name='list'
                         type='font-awesome'
@@ -160,11 +160,11 @@ const MainNavigator = createDrawerNavigator(
                 )
             }
         },
-        About: { 
+        About: {
             screen: AboutNavigator,
             navigationOptions: {
                 drawerLabel: 'About Us',
-                drawerIcon: ({tintColor}) => (
+                drawerIcon: ({ tintColor }) => (
                     <Icon
                         name='info-circle'
                         type='font-awesome'
@@ -178,7 +178,7 @@ const MainNavigator = createDrawerNavigator(
             screen: ContactNavigator,
             navigationOptions: {
                 drawerLabel: 'Contact Us',
-                drawerIcon: ({tintColor}) => (
+                drawerIcon: ({ tintColor }) => (
                     <Icon
                         name='address-card'
                         type='font-awesome'
@@ -215,7 +215,7 @@ const styles = StyleSheet.create({
     container: {
         flex: 1
     },
-    drawerHeader:{
+    drawerHeader: {
         backgroundColor: '#5637DD',
         height: 140,
         alignItems: 'center',
@@ -223,12 +223,12 @@ const styles = StyleSheet.create({
         flex: 1,
         flexDirection: 'row'
     },
-    drawerHeaderText:{
+    drawerHeaderText: {
         color: '#FFF',
         fontSize: 24,
         fontWeight: 'bold'
     },
-    drawerImage:{
+    drawerImage: {
         margin: 10,
         height: 60,
         width: 60
