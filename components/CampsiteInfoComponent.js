@@ -56,7 +56,7 @@ function RenderCampsite(props) {
             return true;
         }
     })
-
+ 
     if (campsite) {
         return (
             <Animatable.View
