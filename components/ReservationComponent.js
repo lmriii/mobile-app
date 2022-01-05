@@ -24,7 +24,23 @@ class Reservation extends Component {
 
     handleReservation() {
         console.log(JSON.stringify(this.state));
-
+        Alert.alert(
+            "Begin Search?",
+            `Number of Campers: ${this.state.campers}\nHike In? ${this.state.hikeIn}\nDate: ${this.state.date.toLocaleDateString('en-US')} `,
+            [
+                {
+                    text: "Cancel",
+                    onPress: () => this.resetForm(),
+                    style: "cancel"
+                },
+                { 
+                    text: "OK", 
+                    onPress: () => this.resetForm() 
+                }
+            ],
+            { cancelable: false }
+        );
+    
     }
     resetForm() {
         this.setState({
@@ -93,19 +109,7 @@ class Reservation extends Component {
                     <View style={styles.formRow}>
                         <Button
                             onPress={() => {
-                                Alert.alert(
-                                    "Begin Search?",
-                                    `Number of Campers: ${this.state.campers}\nHike In? ${this.state.hikeIn}\nDate: ${this.state.date.toLocaleDateString('en-US')} `,
-                                    [
-                                        {
-                                            text: "Cancel",
-                                            onPress: () => this.resetForm(),
-                                            style: "cancel"
-                                        },
-                                        { text: "OK", onPress: () => this.resetForm() }
-                                    ],
-                                    { cancelable: false }
-                                );
+                                this.handleReservation();
                             }}
                             title="Search"
                             color='#5637DD'
